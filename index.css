@@ -515,4 +515,8 @@ footer nav.footer-contacts a {
   footer > div > nav {
     margin-left: 0.4rem;
   }
+
+  .building-types {
+    padding-top: 0;
+  }
 }
