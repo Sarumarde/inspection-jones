@@ -1,0 +1,518 @@
+/* =========================================================
+   RESET & GLOBAL BOX MODEL
+   ========================================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   CSS VARIABLES
+   ========================================================= */
+
+:root {
+  --bar-width: 60px;
+  --bar-height: 8px;
+  --hamburger-gap: 6px;
+  --foreground: #fff;
+  --background: #000;
+  --hamburger-margin: 8px;
+  --animation-timing: 200ms ease-in-out;
+  --hamburger-height: calc(
+    var(--bar-height) * 3 + var(--hamburger-gap) * 2
+  );
+}
+
+/* =========================================================
+   BASE ELEMENTS
+   ========================================================= */
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.active-page {
+  color: #3FA9F5 !important;
+}
+
+/* =========================================================
+   HEADER (DESKTOP)
+   ========================================================= */
+
+body > div.header-div {
+  box-shadow: 0px 15px 10px -15px rgba(0, 0, 0, 0.1);
+}
+
+.desktop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.desktop-logo img {
+  width: 6.6rem;
+}
+
+.desktop-header a {
+  color: #4c5867;
+  text-decoration: none;
+}
+
+/* =========================================================
+   DESKTOP NAVIGATION
+   ========================================================= */
+
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.desktop-nav a {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.desktop-nav a:hover {
+  color: #3FA9F5;
+  transition: 200ms ease-in-out;
+}
+
+.desktop-nav a img.phone {
+  width: 1rem;
+}
+
+.desktop-nav a img.mail {
+  width: 1.5rem;
+}
+
+.desktop-nav > a.mail {
+  align-items: unset;
+}
+
+/* =========================================================
+   HAMBURGER MENU
+   ========================================================= */
+
+.hamburger-menu {
+  --x-width: calc(var(--hamburger-height) * 1.41421356237);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--hamburger-gap);
+  width: max-content;
+
+  position: absolute;
+  top: 2.805rem;
+  right: 2rem;
+
+  cursor: pointer;
+  z-index: 999;
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input {
+  content: "";
+  width: var(--bar-width);
+  height: var(--bar-height);
+  background-color: var(--background);
+  border-radius: 9999px;
+  transform-origin: left center;
+  transition:
+    opacity var(--animation-timing),
+    width var(--animation-timing),
+    rotate var(--animation-timing),
+    translate var(--animation-timing),
+    background-color var(--animation-timing);
+}
+
+.hamburger-menu input {
+  appearance: none;
+  padding: 0;
+  margin: 0;
+  outline: none;
+  pointer-events: none;
+}
+
+.hamburger-menu input:checked {
+  opacity: 0;
+  width: 0;
+}
+
+.hamburger-menu:has(input:checked)::before {
+  rotate: 45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after {
+  rotate: -45deg;
+  width: var(--x-width);
+  translate: 0 calc(var(--bar-height) / 2);
+}
+
+/* =========================================================
+   SIDEBAR / MOBILE NAV
+   ========================================================= */
+
+.sidebar {
+  translate: -100%;
+  transition: translate var(--animation-timing);
+
+  padding: 0rem 2.4rem;
+  background-color: var(--foreground);
+  color: var(--background);
+
+  max-width: 20rem;
+  min-height: 100vh;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  z-index: 998;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar {
+  translate: 0;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 0rem 1rem 0px;
+}
+
+.sidebar img {
+  margin-left: -0.4rem;
+  width: 6.6rem;
+}
+
+nav.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+  top: 1rem;
+}
+
+nav.mobile-nav a {
+  color: #1f3a5f;
+  text-decoration: none;
+}
+
+.mobile-nav a:hover {
+  color: #3FA9F5;
+  transition: 200ms ease-in-out;
+}
+
+.mobile-nav a.phone,
+.mobile-nav a.mail {
+  text-decoration: underline;
+  color: #3FA9F5;
+}
+
+/* =========================================================
+   HERO / HOUSE BACKGROUND
+   ========================================================= */
+
+section.house-background {
+  position: relative;
+  display: flex;
+  z-index: -1;
+}
+
+section.house-background > figure {
+  display: contents;
+}
+
+section.house-background > figure > picture {
+  display: flex;
+  width: 100%;
+}
+
+.house-background img {
+  width: 100%;
+  max-height: 40.7rem;
+  object-fit: cover;
+}
+
+div.house-background-hover-bubble {
+  position: absolute;
+  align-self: center;
+  margin-top: 16rem;
+  margin-right: 30rem;
+  width: 100%;
+  max-width: 30rem;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 16px;
+  transition: 200ms ease-in-out;
+}
+
+div.house-background-hover-bubble:hover {
+  transform: scale(1.0125);
+  box-shadow: 0 0 1rem 0 hsla(0, 0%, 0%, 0.1);
+}
+
+div.house-background-hover-bubble > h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  text-wrap: balance;
+  margin-bottom: 0.5rem;
+}
+
+div.house-background-hover-bubble > p {
+  font-size: 1rem;
+  line-height: 1.5;
+  text-wrap: balance;
+}
+
+/* =========================================================
+   INSPECTION INFORMATION
+   ========================================================= */
+
+section.inspection-information {
+  display: grid;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+}
+
+section.inspection-information > div {
+  max-width: 80rem;
+}
+
+section.inspection-information > div > header {
+  text-align: center;
+  text-wrap: balance;
+}
+
+section.inspection-information > div > header > h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  padding-bottom: 1.5rem;
+}
+
+section.inspection-information ul {
+  display: flex;
+  gap: 3rem;
+}
+
+section.inspection-information ul > li {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+section.inspection-information ul > li picture {
+  display: flex;
+}
+
+section.inspection-information ul > li picture img {
+  width: 100%;
+  max-width: 3rem;
+}
+
+section.inspection-information ul > li h5 {
+  font-size: 1.203125rem;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+section.inspection-information ul > li p {
+  line-height: 1.5;
+  text-align: center;
+  text-wrap: balance;
+}
+
+/* =========================================================
+   BUILDING TYPES
+   ========================================================= */
+
+.building-types {
+  padding: 3rem 1.5rem 3rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.building-types > header {
+  text-align: center;
+  text-wrap: balance;
+}
+
+.building-types > header > h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.building-types > header > p {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+.building-types > div {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+}
+
+.building-types > div > article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  transition: 200ms ease-in-out;
+}
+
+.building-types > div > article:hover {
+  transform: scale(1.0125);
+}
+
+.building-types > div > article figure picture {
+  display: flex;
+  width: 100%;
+}
+
+.building-types > div > article figure picture img {
+  width: 100%;
+  border-radius: 16px;
+}
+
+.building-types > div > article aside {
+  text-align: center;
+}
+
+.building-types > div > article aside h5 {
+  font-size: 1.203125rem;
+  line-height: 1.2;
+  font-weight: 700;
+  text-wrap: balance;
+  margin-bottom: 0.5rem;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+  padding: 3rem 2rem;
+  background-color: #dedee4;
+}
+
+footer > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  max-width: 76rem;
+  margin: 0 auto;
+}
+
+footer > div > a img {
+  max-width: 6.6rem;
+}
+
+footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer nav a {
+  text-decoration: none;
+}
+
+footer nav.footer-links a,
+footer nav.footer-contacts a,
+footer nav.footer-contacts p {
+  width: max-content;
+  color: #3f4a7a;
+}
+
+footer nav.footer-links a:hover,
+footer nav.footer-contacts a.phone:hover,
+footer nav.footer-contacts a.mail:hover {
+  color: #1f2a55;
+  transition: 200ms ease-in-out;
+}
+
+footer nav.footer-contacts a {
+  display: flex;
+  align-items: center;
+  text-decoration: underline;
+}
+
+/* =========================================================
+   MEDIA QUERIES
+   ========================================================= */
+
+@media screen and (min-width: 1000px) {
+  .hamburger-menu,
+  .sidebar {
+    display: none;
+  }
+
+  .desktop-nav {
+    display: flex;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  .hamburger-menu {
+    display: flex;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .sidebar {
+    display: block;
+  }
+
+  section.inspection-information ul {
+    flex-direction: column;
+  }
+
+  .building-types > div {
+    flex-direction: column;
+  }
+
+  div.house-background-hover-bubble {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  footer > div {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  footer > div > nav {
+    margin-left: 0.4rem;
+  }
+}
