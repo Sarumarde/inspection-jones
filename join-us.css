@@ -27,7 +27,7 @@
   background-image: url("assets/portrait-house.jpg");
   background-size: cover;
   background-position: center;
-  filter: blur(10px);
+  filter: blur(7.5px);
 }
 
 /* Dark overlay for readability */
