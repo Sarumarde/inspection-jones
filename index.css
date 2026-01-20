@@ -22,9 +22,7 @@
   --background: #000;
   --hamburger-margin: 8px;
   --animation-timing: 200ms ease-in-out;
-  --hamburger-height: calc(
-    var(--bar-height) * 3 + var(--hamburger-gap) * 2
-  );
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
 }
 
 /* =========================================================
@@ -32,10 +30,11 @@
    ========================================================= */
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
 }
