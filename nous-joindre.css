@@ -1,0 +1,105 @@
+/* ============================
+   CONTACT / HERO SECTION
+   ============================ */
+
+.contact {
+  padding: 3rem 0rem;
+  background-color: #f2f3f5;
+}
+
+/* Hero container */
+.contact-hero {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 67.6vh;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Blurred background image */
+.contact-bg {
+  position: absolute;
+  inset: 0;
+  background-image: url("assets/portrait-house.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: blur(7.5px);
+}
+
+/* Dark overlay for readability */
+.contact-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+/* Content layer */
+.contact-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #ffffff;
+  padding: 3rem;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Typography */
+.contact-content h2 {
+  font-size: 3.6rem; /* was 3.25rem */
+  line-height: 1.18; /* slightly looser for large type */
+  font-weight: 800;
+  margin-bottom: 1.1rem;
+  text-wrap: balance;
+}
+
+.contact-content p {
+  font-size: 1.35rem; /* was 1.25rem */
+  line-height: 1.65; /* was 1.6 */
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  text-wrap: balance;
+}
+
+.contact-content a {
+  text-decoration: none;
+  color: #fff;
+}
+
+form {
+  max-width: 900px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input[type="tel"] {
+  max-width: 300px; /* matches smaller phone field */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
