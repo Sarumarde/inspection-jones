@@ -47,7 +47,7 @@ body {
 }
 
 .active-page {
-  color: #3FA9F5 !important;
+  color: #e22726 !important;
 }
 
 /* =========================================================
@@ -72,7 +72,7 @@ body > div.header-div {
 }
 
 .desktop-header a {
-  color: #4c5867;
+  color: #646564;
   text-decoration: none;
 }
 
@@ -95,7 +95,7 @@ body > div.header-div {
 }
 
 .desktop-nav a:hover {
-  color: #3FA9F5;
+  color: #e22726;
   transition: 200ms ease-in-out;
 }
 
@@ -219,14 +219,14 @@ nav.mobile-nav a {
 }
 
 .mobile-nav a:hover {
-  color: #3FA9F5;
+  color: #e22726;
   transition: 200ms ease-in-out;
 }
 
 .mobile-nav a.phone,
 .mobile-nav a.mail {
   text-decoration: underline;
-  color: #3FA9F5;
+  color: #e22726;
 }
 
 /* =========================================================
@@ -250,8 +250,9 @@ section.house-background > figure > picture {
 
 .house-background img {
   width: 100%;
-  max-height: 40.7rem;
+  max-height: 33rem;
   object-fit: cover;
+  object-position: 0% 33%;
 }
 
 div.house-background-hover-bubble {
@@ -264,12 +265,6 @@ div.house-background-hover-bubble {
   padding: 2rem;
   background-color: #fff;
   border-radius: 16px;
-  transition: 200ms ease-in-out;
-}
-
-div.house-background-hover-bubble:hover {
-  transform: scale(1.0125);
-  box-shadow: 0 0 1rem 0 hsla(0, 0%, 0%, 0.1);
 }
 
 div.house-background-hover-bubble > h1 {
@@ -449,13 +444,13 @@ footer nav.footer-links a,
 footer nav.footer-contacts a,
 footer nav.footer-contacts p {
   width: max-content;
-  color: #3f4a7a;
+  color: #333333;
 }
 
 footer nav.footer-links a:hover,
 footer nav.footer-contacts a.phone:hover,
 footer nav.footer-contacts a.mail:hover {
-  color: #1f2a55;
+  color: #e22726;
   transition: 200ms ease-in-out;
 }
 
@@ -517,6 +512,6 @@ footer nav.footer-contacts a {
   }
 
   .building-types {
-    padding-top: 0;
+    padding-top: 0x;
   }
 }

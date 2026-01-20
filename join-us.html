@@ -47,28 +47,71 @@
     </nav>
   </aside>
 
- <section class="contact">
-  <div class="contact-hero">
-    
-    <div class="contact-bg"></div>
-    <div class="contact-overlay"></div>
+  <section class="contact">
+    <div class="contact-hero">
+      
+      <div class="contact-bg"></div>
+      <div class="contact-overlay"></div>
 
-    <header class="contact-content">
-      <h2>Iannick Jones</h2>
-      <p>
-        <a class="phone" href="tel:+15146530401">514&nbsp;653-0401</a>
-      </p>
-      <p>
-        <a class="mail" href="mailto:info@inspectionjones.ca">info@inspectionjones.ca</a>
-      </p>
-      <p>Inspection résidentielle</p>
-      <p>Membre AIBQ</p>
-      <p>Certifié • Licencié • Norme BNQ 3009-500</p>
-      <p>Assuré pour erreurs et omissions</p>
-    </header>
+      <header class="contact-content">
+        <h2>Iannick Jones</h2>
+        <p>
+          <a class="phone" href="tel:+15146530401">514&nbsp;653-0401</a>
+        </p>
+        <p>
+          <a class="mail" href="mailto:info@inspectionjones.ca">info@inspectionjones.ca</a>
+        </p>
+        <p>Inspection résidentielle</p>
+        <p>Membre AIBQ</p>
+        <p>Certifié • Licencié • Norme BNQ 3009-500</p>
+        <p>Assuré pour erreurs et omissions</p>
+      </header>
+    </div>
+  </section>
 
-  </div>
-</section>
+  <form action="https://formspree.io/f/mbddayaw" method="POST">
+
+    <label for="name">Prénom et nom (requis)</label>
+    <input
+      type="text"
+      id="name"
+      name="name"
+      required
+    >
+
+    <label for="email">Adresse courriel (requis)</label>
+    <input
+      type="email"
+      id="email"
+      name="email"
+      required
+    >
+
+    <label for="phone">Numéro de téléphone (requis)</label>
+    <input
+      type="tel"
+      id="phone"
+      name="phone"
+      required
+    >
+
+    <label for="subject">Sujet</label>
+    <input
+      type="text"
+      id="subject"
+      name="subject"
+    >
+
+    <label for="message">Message</label>
+    <textarea
+      id="message"
+      name="message"
+      rows="6"
+    ></textarea>
+
+    <button type="submit">Envoyer</button>
+
+  </form>
 
   <footer>
     <div>

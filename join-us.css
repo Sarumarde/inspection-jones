@@ -68,3 +68,38 @@
   text-decoration: none;
   color: #fff;
 }
+
+form {
+  max-width: 900px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+input[type="tel"] {
+  max-width: 300px; /* matches smaller phone field */
+}
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #222;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
