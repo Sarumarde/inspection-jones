@@ -76,46 +76,45 @@
       </div>
     </section>
 
-    <form action="https://formsubmit.co/mathieurioux2011@gmail.com" method="POST">
-      <!-- 🔧 FormSubmit options (hidden inputs) -->
-      <input
-        type="hidden"
-        name="_subject"
-        value="Nouveau message – Formulaire de contact"
-      />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_template" value="table" />
-      <input
-        type="hidden"
-        name="_next"
-        value="https://inspectionjones.ca/thank-you.html"
-      />
-
-      <!-- 🤖 Honeypot anti-spam -->
-      <input type="text" name="_honey" style="display: none" />
-
-      <!-- 👤 Name -->
-      <label for="name">Prénom et nom (requis)</label>
-      <input type="text" id="name" name="name" required />
-
-      <!-- 📧 Email -->
-      <label for="email">Adresse courriel (requis)</label>
-      <input type="email" id="email" name="email" required />
-
-      <!-- 📞 Phone -->
-      <label for="phone">Numéro de téléphone (requis)</label>
-      <input type="tel" id="phone" name="phone" required />
-
-      <!-- 🧾 Subject -->
-      <label for="subject">Sujet</label>
-      <input type="text" id="subject" name="subject" />
-
-      <!-- 💬 Message -->
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="6" required></textarea>
-
-      <!-- 🚀 Submit -->
-      <button type="submit">Envoyer</button>
+    <form
+      target="_blank"
+      action="https://formsubmit.co/mathieurioux2011@gmail.com"
+      method="POST"
+    >
+      <div class="form-group">
+        <div class="form-row">
+          <div class="col">
+            <input
+              type="text"
+              name="name"
+              class="form-control"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div class="col">
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <textarea
+          placeholder="Your Message"
+          class="form-control"
+          name="message"
+          rows="10"
+          required
+        ></textarea>
+      </div>
+      <button type="submit" class="btn btn-lg btn-dark btn-block">
+        Submit Form
+      </button>
     </form>
 
     <footer>
