@@ -1,0 +1,170 @@
+/* =========================
+   RESET
+========================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #111;
+  background-color: #fff;
+}
+
+/* =========================
+   ABOUT US SECTION
+========================= */
+
+section.about-us {
+  padding: 6rem 3rem;
+  background-color: #fffefe;
+}
+
+section.about-us > div {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* =========================
+   ARTICLE / TEXT
+========================= */
+
+section.about-us article {
+  align-self: center;
+  max-width: 42rem; /* improves readability */
+}
+
+section.about-us article header h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-wrap: balance;
+}
+
+section.about-us article header p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  text-wrap: balance;
+}
+
+/* Optional future-proofing if you split text into multiple paragraphs */
+section.about-us article header p + p {
+  margin-top: 0.75rem;
+}
+
+/* =========================
+   IMAGE
+========================= */
+
+section.about-us picture {
+  display: flex;
+}
+
+section.about-us picture img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+/* Step list layout stays the same */
+section.inspection-step-by-step {
+  padding: 6rem 3rem;
+  background-color: #f7f7f7;
+}
+
+section.inspection-step-by-step > div {
+  width: 100%;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+section.inspection-step-by-step > div > header > h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-wrap: balance;
+}
+
+section.inspection-step-by-step > div > ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+}
+
+section.inspection-step-by-step > div > ul > li {
+  flex-grow: 1;
+  list-style-type: none;
+}
+
+section.inspection-step-by-step > div > ul > li > header {
+  display: flex;
+  margin-bottom: 0.5rem;
+}
+
+section.inspection-step-by-step > div > ul > li > header > span {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #e22726;
+}
+
+section.inspection-step-by-step > div > ul > li > header > h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  font-weight: 600;
+}
+
+section.inspection-step-by-step > div > ul > li > p {
+  font-size: 1rem;
+  line-height: 1.63;
+  text-wrap: balance;
+}
+
+@media screen and (min-width: 1280px) {
+  section.about-us > div {
+    flex-direction: row;
+    gap: 6rem;
+  }
+
+  section.inspection-step-by-step > div > ul > li {
+    flex-basis: calc(33% - 1.8rem);
+  }
+
+  section.about-us picture img {
+    max-width: 33rem;
+  }
+}
+
+@media screen and (max-width: 1279px) {
+  section.about-us > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  section.inspection-step-by-step > div > ul > li {
+    flex-basis: calc(50% - 1.5rem);
+  }
+
+  section.about-us picture img {
+    max-width: 44rem;
+  }
+}
+
+@media screen and (max-width: 999px) {
+  section.inspection-step-by-step > div > ul > li {
+    flex-basis: 100%;
+  }
+}

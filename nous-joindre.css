@@ -1,10 +1,16 @@
-/* ============================
-   CONTACT / HERO SECTION
-   ============================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-.contact {
-  padding: 3rem 0rem;
-  background-color: #f2f3f5;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: "Inter", sans-serif;
 }
 
 /* Hero container */
@@ -37,69 +43,133 @@
   background-color: rgba(0, 0, 0, 0.25);
 }
 
-/* Content layer */
-.contact-content {
+/* Wrapper for content + form */
+.contact-inner {
   position: relative;
   z-index: 1;
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Content layer */
+.contact-content {
   text-align: center;
   color: #ffffff;
-  padding: 3rem;
-  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
 /* Typography */
 .contact-content h2 {
-  font-size: 3.6rem; /* was 3.25rem */
-  line-height: 1.18; /* slightly looser for large type */
-  font-weight: 800;
-  margin-bottom: 1.1rem;
+  font-size: 2.5rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
   text-wrap: balance;
 }
 
 .contact-content p {
-  font-size: 1.35rem; /* was 1.25rem */
-  line-height: 1.65; /* was 1.6 */
-  font-weight: 400;
-  margin-bottom: 0.6rem;
+  font-size: 1rem;
+  line-height: 1.63;
+  margin-bottom: 0.5rem;
   text-wrap: balance;
+}
+
+.contact-content p a {
+  text-decoration: underline;
+}
+
+.contact-content p:last-child {
+  margin: 0;
 }
 
 .contact-content a {
   text-decoration: none;
-  color: #fff;
+  color: #ffffff;
 }
 
-form {
-  max-width: 900px;
-}
+/* ============================
+   CONTACT FORM
+   ============================ */
 
-label {
-  display: block;
-  margin-top: 20px;
-  font-size: 14px;
-}
-
-input,
-textarea {
+.contact-form {
   width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  font-size: 14px;
+  display: grid;
+  gap: 1.5rem;
+  max-width: 33rem;
 }
 
-input[type="tel"] {
-  max-width: 300px; /* matches smaller phone field */
-}
-
-button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background: #222;
-  color: #fff;
+/* Inputs */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 1rem 1rem;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  line-height: 1.63;
+  border-radius: 8px;
   border: none;
-  cursor: pointer;
+  outline: none;
 }
 
-button:hover {
-  opacity: 0.9;
+.contact-form textarea {
+  resize: vertical;
+  max-width: 100%;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #646564;
+}
+
+/* Button */
+.contact-form button {
+  width: fit-content;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #e22726;
+}
+
+/* =========================================================
+   MEDIA QUERIES
+   ========================================================= */
+
+@media screen and (min-width: 720px) {
+  .contact-content {
+    padding-top: 6rem;
+  }
+
+  .contact-form {
+    padding-bottom: 6rem;
+  }
+
+  .contact-inner {
+    gap: 3rem;
+  }
+}
+
+@media screen and (max-width: 719px) {
+  .contact-content {
+    padding-top: 3rem;
+  }
+
+  .contact-form {
+    padding-bottom: 3rem;
+  }
+
+  .contact-inner {
+    gap: 1.5rem;
+  }
 }
